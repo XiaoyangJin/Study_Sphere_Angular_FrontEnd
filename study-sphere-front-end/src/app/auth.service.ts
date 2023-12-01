@@ -21,7 +21,13 @@ export class AuthService {
     }
   ];
   session: any;
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    let session: any = localStorage.getItem('session');
+    if (session) {
+      session = JSON.parse(session);
+    }
+    this.session = session;
+  }
 
   login(username: string, password: string) {
     let user = this.users.find((u) => u.username === username && u.password === password);
