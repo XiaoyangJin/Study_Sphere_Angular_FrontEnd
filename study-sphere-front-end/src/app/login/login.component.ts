@@ -12,7 +12,7 @@ export class LoginComponent {
 
   form: FormGroup = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
+    password: ['', Validators.required]
   });
   isFormSubmitted = false;
 
@@ -28,7 +28,7 @@ export class LoginComponent {
   }
 
   @ViewChild('passwordToggle') passwordToggle!: ElementRef;
-  isPasswordVisible: boolean = false;
+  isPasswordVisible: boolean = true; // Set it to true by default
 
   togglePasswordVisibility() {
     this.isPasswordVisible = !this.isPasswordVisible;
@@ -36,10 +36,11 @@ export class LoginComponent {
 
     if (this.isPasswordVisible) {
       passwordInput.type = 'text';
-      this.passwordToggle.nativeElement.textContent = 'Hide Password';
     } else {
       passwordInput.type = 'password';
-      this.passwordToggle.nativeElement.textContent = 'Show Password';
     }
   }
+
+
+
 }

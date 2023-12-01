@@ -41,22 +41,12 @@ body {
 
 .input-field {
     /* flex: 1; */
-    /* Allow password input to expand based on content */
-    width: 250px;
+    width: 230px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-/* input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-} */
 
 #username-error {
     color: #61A3BA;
@@ -72,12 +62,16 @@ input[type="password"] {
     flex: 1;
 }
 
-#password-toggle {
-    cursor: pointer;
+.passwordToggle {
     font-size: 14px;
-    color: #A2C579;
+    color: #61A3BA;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
     text-decoration: underline;
 }
+
 
 #login-button,
 #signup-button {
@@ -98,4 +92,10 @@ input[type="password"] {
 #login-button:hover,
 #signup-button:hover {
     background-color: #A8B71E;
+}
+
+#forgot-password {
+    font-size: 14px;
+    color: #61A3BA;
+    cursor: pointer;
 }

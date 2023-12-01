@@ -1,19 +1,30 @@
 <div class="center-container">
     <div id="login-container">
-        <div id="login-form" formGroupName="form">
-            <input type="text" id="username" formControlName="username" placeholder="Please enter your email"
-                class="input-field">
-            <div id="username-error"
+        <div id="login-form" [formGroup]="form">
+            <div class="input">
+                <!-- <input type="text" id="username" formControlName="username" placeholder="Please enter your email"
+                    class="input-field"> -->
+                <input type="text" formControlName="username" placeholder="Please enter your email">
+                <!-- keep no show -->
+                <!-- <div id="username-error"
                 *ngIf="form.get('username')?.hasError('email') && (form.get('username')?.touched || isFormSubmitted)">
                 Please enter a valid email address.
-            </div>
+            </div> -->
 
-
-            <div id="password-container">
+                <!-- <div id="password-container">
                 <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
-                    class="input-field">
-                <span #passwordToggle (click)="togglePasswordVisibility()">Show Password</span>
+                    class="input-field" maxlength="50" />
+                <span #passwordToggle (click)="togglePasswordVisibility()">
+                    {{ isPasswordVisible ? 'Hide Password' : 'Show Password' }}
+                </span>
+            </div> -->
+
+                <!-- <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
+                    class="input-field"> -->
+
+                <input type="password" formControlName="password" placeholder="Please enter your password">
             </div>
+
             <button id="login-button" (click)="login()">Login</button>
             <button id="signup-button">Sign Up</button>
             <a id="forgot-password" href="#">Forgot Password</a>

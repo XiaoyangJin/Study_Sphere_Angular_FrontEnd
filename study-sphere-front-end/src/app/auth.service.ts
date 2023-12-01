@@ -11,8 +11,14 @@ export class AuthService {
       name: 'xy',
       username: 'xy@gmail.com',
       password: '12345'
+    },
+    {
+      id: 1,
+      name: 'summer',
+      username: 'summer@gmail.com',
+      password: 'summer'
     }
-  ]
+  ];
   session: any;
   constructor() { }
 
