@@ -2,9 +2,8 @@
     <div id="login-container">
         <div id="login-form" [formGroup]="form">
             <div class="input">
-                <!-- <input type="text" id="username" formControlName="username" placeholder="Please enter your email"
-                    class="input-field"> -->
-                <input type="text" formControlName="username" placeholder="Please enter your email">
+                <input type="text" id="username" formControlName="username" placeholder="Please enter your email"
+                    class="input-field">
                 <!-- keep no show -->
                 <!-- <div id="username-error"
                 *ngIf="form.get('username')?.hasError('email') && (form.get('username')?.touched || isFormSubmitted)">
@@ -19,10 +18,8 @@
                 </span>
             </div> -->
 
-                <!-- <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
-                    class="input-field"> -->
-
-                <input type="password" formControlName="password" placeholder="Please enter your password">
+                <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
+                    class="input-field">
             </div>
 
             <button id="login-button" (click)="login()">Login</button>
