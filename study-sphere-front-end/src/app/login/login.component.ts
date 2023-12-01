@@ -15,7 +15,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] // You can apply your CSS styles here
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
 
