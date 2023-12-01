@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 
@@ -16,31 +17,30 @@ export class LoginComponent {
   });
   isFormSubmitted = false;
 
-  constructor(private authService: AuthService, private fb: FormBuilder) { }
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   login() {
     let user = this.authService.login(this.form.value.username, this.form.value.password);
     if (!user) {
       alert('Invalid username or password');
     } else {
-      this.isFormSubmitted = true;
+      this.router.navigateByUrl('/admin')
+      // this.isFormSubmitted = true;
     }
   }
 
-  @ViewChild('passwordToggle') passwordToggle!: ElementRef;
-  isPasswordVisible: boolean = true; // Set it to true by default
+  // @ViewChild('passwordToggle') passwordToggle!: ElementRef;
+  // isPasswordVisible: boolean = true; // Set it to true by default
 
-  togglePasswordVisibility() {
-    this.isPasswordVisible = !this.isPasswordVisible;
-    const passwordInput = document.getElementById('password') as HTMLInputElement;
+  // togglePasswordVisibility() {
+  //   this.isPasswordVisible = !this.isPasswordVisible;
+  //   const passwordInput = document.getElementById('password') as HTMLInputElement;
 
-    if (this.isPasswordVisible) {
-      passwordInput.type = 'text';
-    } else {
-      passwordInput.type = 'password';
-    }
-  }
-
-
+  //   if (this.isPasswordVisible) {
+  //     passwordInput.type = 'text';
+  //   } else {
+  //     passwordInput.type = 'password';
+  //   }
+  // }
 
 }
