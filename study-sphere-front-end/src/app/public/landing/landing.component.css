@@ -1,0 +1,34 @@
+body {
+    background-color: #FFFFDD;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#header {
+    font-size: 24px;
+    color: #A2C579;
+    margin-bottom: 20px;
+}
+
+#logo {
+    max-width: 100%;
+    height: auto;
+}
+
+#login-button {
+    margin-top: 20px;
+    background-color: #D2DE32;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#login-button:hover {
+    background-color: #A8B71E;
+}
