@@ -11,13 +11,21 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
 
   form: FormGroup = this.fb.group({
-    username: ['', Validators.required],
+    username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
+  isFormSubmitted = false;
 
   constructor(private authService: AuthService, private fb: FormBuilder) { }
 
-  login() { }
+  login() {
+    let user = this.authService.login(this.form.value.username, this.form.value.password);
+    if (!user) {
+      alert('Invalid username or password');
+    } else {
+      this.isFormSubmitted = true;
+    }
+  }
 
   @ViewChild('passwordToggle') passwordToggle!: ElementRef;
   isPasswordVisible: boolean = false;

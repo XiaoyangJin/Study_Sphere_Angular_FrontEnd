@@ -90,12 +90,12 @@ input[type="password"] {
     margin-right: 10px;
 }
 
-#login-button:disabled {
+/* #login-button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-}
+} */
 
-#login-button:not(:disabled):hover,
+#login-button:hover,
 #signup-button:hover {
     background-color: #A8B71E;
 }
