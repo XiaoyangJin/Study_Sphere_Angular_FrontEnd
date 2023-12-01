@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
 import { LandingModule } from './landing/landing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { LandingModule } from './landing/landing.module';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    LandingModule
+    LandingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class PublicModule { }

@@ -1,15 +1,6 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent {
-
-// }
-// login.component.ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -18,6 +9,15 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  form: FormGroup = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+
+  constructor(private authService: AuthService, private fb: FormBuilder) { }
+
+  login() { }
 
   @ViewChild('passwordToggle') passwordToggle!: ElementRef;
   isPasswordVisible: boolean = false;
