@@ -1,1 +1,16 @@
-<p>login works!</p>
+<!-- login.component.html -->
+<div class="center-container">
+    <div id="login-container">
+        <div id="login-form">
+            <input type="text" id="username" placeholder="Please enter your email">
+            <div id="username-error"></div>
+            <div id="password-container">
+                <input type="password" id="password" placeholder="Please enter your password">
+                <span #passwordToggle (click)="togglePasswordVisibility()">Show Password</span>
+            </div>
+            <button id="login-button">Login</button>
+            <button id="signup-button">Sign Up</button>
+            <a id="forgot-password" href="#">Forgot Password</a>
+        </div>
+    </div>
+</div>
