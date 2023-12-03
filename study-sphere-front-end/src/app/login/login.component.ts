@@ -29,6 +29,10 @@ export class LoginComponent {
     }
   }
 
+  navigateToSignup() {
+    this.router.navigate(['/signup']);
+  }
+
   // @ViewChild('passwordToggle') passwordToggle!: ElementRef;
   // isPasswordVisible: boolean = true; // Set it to true by default
 
