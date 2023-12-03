@@ -15,7 +15,7 @@ export class LoginComponent {
     username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
-  isFormSubmitted = false;
+  // isFormSubmitted = false;
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 

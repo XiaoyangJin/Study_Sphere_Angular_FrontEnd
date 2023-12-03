@@ -3,7 +3,6 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     position: relative;
-    /* Add this */
 }
 
 header {
@@ -32,5 +31,3 @@ header {
 .logout-button:hover {
     background-color: #8B9B2F;
 }
-
-/* Add additional styles for your page content here */
