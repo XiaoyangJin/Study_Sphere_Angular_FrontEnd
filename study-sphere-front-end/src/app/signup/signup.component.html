@@ -1,4 +1,4 @@
-<div class="center-container">
+<!-- <div class="center-container">
     <div class="signup-container">
         <h1>Sign Up</h1>
         <div id="signup-form">
@@ -14,6 +14,28 @@
             </div>
             <button type="submit" class="btn-signup" (click)="signup()">Sign Up</button>
         </div>
+        <div class="login-link">
+            Already have an account? <a href="/login">Log in</a>
+        </div>
+    </div>
+</div> -->
+
+<div class="center-container">
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form [formGroup]="form" (ngSubmit)="signup()">
+            <div class="form-group">
+                <label for="username">Username/Email:</label>
+                <input type="text" id="username" formControlName="username" class="input-field"
+                    placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" formControlName="password" class="input-field"
+                    placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn-signup">Sign Up</button>
+        </form>
         <div class="login-link">
             Already have an account? <a href="/login">Log in</a>
         </div>

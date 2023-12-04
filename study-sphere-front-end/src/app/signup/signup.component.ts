@@ -18,10 +18,31 @@ export class SignupComponent {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   signup() {
-    //put it into the database(postgres sql)[after backend nodejs?]
-    //after email authroization(future optional)
-    //change the authority to be able to login
-    //redirect to the public page
-    this.router.navigate(['']);
+    // Get the form values
+    const username = this.form.get('username')?.value;
+    const password = this.form.get('password')?.value;
+
+    console.log(username);
+
+    // Check if both username and password are not empty
+    if (username.trim() !== '' && password.trim() !== '') {
+      // Both fields are not empty, proceed with signup
+      const newUser = {
+        username: username,
+        password: password
+      };
+
+      // Add the new user to the AuthService
+      this.authService.addUser(newUser);
+
+      // Redirect to the public page or perform other actions as needed
+      this.router.navigate(['']);
+
+      // Reset the form fields to empty after signup
+      this.form.reset();
+    } else {
+      // Handle the case where either or both fields are empty
+      // You can show an error message or perform other actions
+    }
   }
 }

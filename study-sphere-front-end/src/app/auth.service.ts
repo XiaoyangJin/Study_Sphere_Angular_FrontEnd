@@ -45,4 +45,11 @@ export class AuthService {
     localStorage.removeItem('session');
     this.router.navigateByUrl('/');
   }
+
+  // Add a method to allow adding new users
+  addUser(newUser: any) {
+    newUser.id = this.users.length + 1; // Assign a unique ID
+    console.log(newUser);
+    this.users.push(newUser);
+  }
 }

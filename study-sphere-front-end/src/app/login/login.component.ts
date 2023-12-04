@@ -32,19 +32,4 @@ export class LoginComponent {
   navigateToSignup() {
     this.router.navigate(['/signup']);
   }
-
-  // @ViewChild('passwordToggle') passwordToggle!: ElementRef;
-  // isPasswordVisible: boolean = true; // Set it to true by default
-
-  // togglePasswordVisibility() {
-  //   this.isPasswordVisible = !this.isPasswordVisible;
-  //   const passwordInput = document.getElementById('password') as HTMLInputElement;
-
-  //   if (this.isPasswordVisible) {
-  //     passwordInput.type = 'text';
-  //   } else {
-  //     passwordInput.type = 'password';
-  //   }
-  // }
-
 }
