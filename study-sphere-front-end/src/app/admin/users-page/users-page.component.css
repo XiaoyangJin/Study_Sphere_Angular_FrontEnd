@@ -21,11 +21,23 @@ header {
     padding: 10px 20px;
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 30px;
     right: 20px;
 }
 
 .logout-button:hover {
+    background-color: #8B9B2F;
+}
+
+.playground-button {
+    background-color: #A2C579;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.playground-button:hover {
     background-color: #8B9B2F;
 }
 
