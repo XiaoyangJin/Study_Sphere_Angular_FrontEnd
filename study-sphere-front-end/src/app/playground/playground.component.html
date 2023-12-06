@@ -6,11 +6,10 @@
         <div class="keyword" (click)="filterByKeyword('keyword1')">Keyword 1</div>
         <div class="keyword" (click)="filterByKeyword('keyword2')">Keyword 2</div>
         <div class="keyword" (click)="filterByKeyword('keyword3')">Keyword 3</div>
-
     </div>
     <div class="main-content">
         <h1>All Posts</h1>
-        <div class="post" *ngFor="let post of filteredPosts" [attr.data-keywords]="post.keywords.join(' ')">
+        <div class="post" *ngFor="let post of postService.posts" [attr.data-keywords]="post.keywords.join(' ')">
             <div class="post-title">{{ post.title }}</div>
             <div class="post-summary">{{ post.summary }}</div>
             <div class="keywords">Keywords:

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlaygroundComponent } from '../playground/playground.component'; // Import your PlaygroundComponent
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post',
@@ -11,12 +11,12 @@ export class PostComponent implements OnInit {
   postId: number = 0;
   post: any;
 
-  constructor(private route: ActivatedRoute, private playgroundComponent: PlaygroundComponent) { }
+  constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.postId = +params.get('id')!; // Convert the parameter to a number if needed
-      this.post = this.playgroundComponent.getPostById(this.postId); // Fetch the post data
+      this.post = this.postService.getPostById(this.postId);
     });
   }
 }

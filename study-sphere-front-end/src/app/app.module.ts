@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
 import { PostComponent } from './post/post.component';
+import { PostService } from './post.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PostComponent } from './post/post.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
