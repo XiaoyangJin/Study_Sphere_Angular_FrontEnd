@@ -7,13 +7,15 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { PlaygroundComponent } from './playground/playground.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PlaygroundComponent
   ],
   imports: [
     BrowserModule,
