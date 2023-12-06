@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'playground', component: PlaygroundComponent },
-  { path: 'post', component: PostComponent }
+  { path: 'post/:id', component: PostComponent }
 ];
 
 @NgModule({
