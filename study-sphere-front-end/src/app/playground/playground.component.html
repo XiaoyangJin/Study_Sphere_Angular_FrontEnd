@@ -1,1 +1,103 @@
-<p>playground works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground Page</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-sidebar {
+            width: 20%;
+            padding: 20px;
+            background-color: #61A3BA;
+            /* Blue color */
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .post-summary {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .keyword {
+            font-size: 14px;
+            color: #D2DE32;
+            /* Green color */
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-sidebar">
+            <h2>Groups</h2>
+            <div class="keyword" onclick="filterByKeyword('keyword1')">Keyword 1</div>
+            <div class="keyword" onclick="filterByKeyword('keyword2')">Keyword 2</div>
+            <div class="keyword" onclick="filterByKeyword('keyword3')">Keyword 3</div>
+            <!-- Add more keywords as needed -->
+        </div>
+        <div class="main-content">
+            <h1>All Posts</h1>
+            <div class="post" data-keywords="keyword1">
+                <div class="post-title">Post 1 Title</div>
+                <div class="post-summary">This is a summary of Post 1. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.</div>
+                <div class="keywords">Keywords: <span class="keyword">Keyword 1</span></div>
+            </div>
+            <div class="post" data-keywords="keyword2">
+                <div class="post-title">Post 2 Title</div>
+                <div class="post-summary">This is a summary of Post 2. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.</div>
+                <div class="keywords">Keywords: <span class="keyword">Keyword 2</span></div>
+            </div>
+            <div class="post" data-keywords="keyword1 keyword3">
+                <div class="post-title">Post 3 Title</div>
+                <div class="post-summary">This is a summary of Post 3. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.</div>
+                <div class="keywords">Keywords: <span class="keyword">Keyword 1</span>, <span class="keyword">Keyword
+                        3</span></div>
+            </div>
+            <!-- Add more posts with titles, summaries, and keywords as needed -->
+        </div>
+    </div>
+
+    <script>
+        function filterByKeyword(keyword) {
+            const posts = document.querySelectorAll('.post');
+            posts.forEach(post => {
+                const keywords = post.getAttribute('data-keywords');
+                if (keywords.includes(keyword)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
