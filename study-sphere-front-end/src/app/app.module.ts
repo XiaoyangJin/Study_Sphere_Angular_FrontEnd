@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
     LoginComponent,
     SignupComponent,
     PlaygroundComponent,
-    LogoutBarComponent
+    LogoutBarComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
