@@ -39,3 +39,15 @@ body {
     cursor: pointer;
     margin-right: 10px;
 }
+
+.clear-button {
+    background-color: #A2C579;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: #8B9B2F;
+}
