@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-playground',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent {
+
+  constructor(private authService: AuthService) { }
+
   posts: any[] = [
     { title: 'Post 1 Title', summary: 'This is a summary of Post 1.', keywords: ['keyword1'] },
     { title: 'Post 2 Title', summary: 'This is a summary of Post 2.', keywords: ['keyword2'] },

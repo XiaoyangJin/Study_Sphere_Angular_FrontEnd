@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { UsersPageComponent } from './users-page/users-page.component';
-import { LogoutBarComponent } from '../shared/logout-bar/logout-bar.component';
 
 
 @NgModule({
   declarations: [
-    UsersPageComponent,
-    LogoutBarComponent
+    UsersPageComponent
   ],
   imports: [
     CommonModule,
