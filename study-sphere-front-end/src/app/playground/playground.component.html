@@ -16,6 +16,7 @@
             <div class="keywords">Keywords:
                 <span class="keyword" *ngFor="let keyword of post.keywords">{{ keyword }}</span>
             </div>
+            <a [routerLink]="['/post', post.id]">Read More</a>
         </div>
     </div>
 </div>
