@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { PlaygroundComponent } from './playground/playground.component';
+import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PlaygroundComponent } from './playground/playground.component';
     AdminComponent,
     LoginComponent,
     SignupComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    LogoutBarComponent
   ],
   imports: [
     BrowserModule,
