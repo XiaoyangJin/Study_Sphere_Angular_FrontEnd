@@ -16,7 +16,7 @@ export class PlaygroundComponent {
     { id: 3, title: 'Post 3 Title', summary: 'This is a summary of Post 3.', keywords: ['keyword1', 'keyword3'] },
   ];
 
-  filteredPosts: any[] = [];
+  filteredPosts: any[] = this.posts;
 
   filterByKeyword(keyword: string) {
     this.filteredPosts = this.posts.filter(post => post.keywords.includes(keyword));
