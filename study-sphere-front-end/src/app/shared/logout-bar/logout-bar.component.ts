@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-logout-bar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class LogoutBarComponent {
 
+  constructor(private authService: AuthService) { }
+
+  logout() {
+    this.authService.logout();
+  }
 }
