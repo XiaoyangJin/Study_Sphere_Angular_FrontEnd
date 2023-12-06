@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: beige;
+}
+
+.post {
+    background-color: #FFFFDD;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin: 20px;
+}
+
+.post-title {
+    font-size: 24px;
+    color: #A2C579;
+}
+
+.keywords {
+    font-size: 14px;
+    color: #61A3BA;
+    margin-top: 10px;
+}
+
+.post-summary {
+    font-size: 18px;
+    color: #D2DE32;
+    margin-top: 10px;
+}
+
+.post-content {
+    margin-top: 20px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
