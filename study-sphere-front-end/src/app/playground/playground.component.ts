@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-playground',
@@ -8,7 +7,7 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class PlaygroundComponent {
 
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   posts: any[] = [
     { id: 1, title: 'Post 1 Title', summary: 'This is a summary of Post 1.', keywords: ['keyword1'] },
@@ -24,5 +23,9 @@ export class PlaygroundComponent {
 
   clearFilters() {
     this.filteredPosts = this.posts; // Reset filteredPosts to all posts
+  }
+
+  getPostById(postId: number) {
+    return this.posts.find(post => post.id === postId);
   }
 }
