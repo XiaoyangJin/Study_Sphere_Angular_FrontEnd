@@ -1,4 +1,3 @@
-// playground.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -17,5 +16,9 @@ export class PlaygroundComponent {
 
   filterByKeyword(keyword: string) {
     this.filteredPosts = this.posts.filter(post => post.keywords.includes(keyword));
+  }
+
+  clearFilters() {
+    this.filteredPosts = this.posts; // Reset filteredPosts to all posts
   }
 }
