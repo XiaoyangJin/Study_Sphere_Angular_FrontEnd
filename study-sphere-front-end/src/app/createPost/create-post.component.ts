@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { PostService } from '../post.service';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-create-post',
@@ -7,17 +8,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
-  // postForm: FormGroup;
+  newPost: Post = {
+    id: 0,
+    title: '',
+    summary: '',
+    keywords: []
+  };
 
-  // constructor(private formBuilder: FormBuilder) { }
+  constructor(private postService: PostService) { }
 
-  // ngOnInit(): void {
-  //   this.postForm = this.formBuilder.group({
-  //     title: ['', Validators.required],
-  //     summary: ['', Validators.required],
-  //     mainContent: ['', Validators.required],
-  //     keywords: [''],
-  //     image: ['']
-  //   });
-  // }
+  onSubmit() {
+    this.postService.addNewPost(this.newPost);
+
+    this.newPost = {
+      id: 0,
+      title: '',
+      summary: '',
+      keywords: []
+    };
+  }
 }
