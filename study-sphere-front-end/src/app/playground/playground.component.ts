@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -7,16 +8,19 @@ import { PostService } from '../post.service';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
-  posts: any[] = []; // Define the posts property here
+  posts: any[] = [];
 
-  constructor(public postService: PostService) { }
+  constructor(public postService: PostService, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    // You can initialize posts here or leave it empty if you want to fetch data later
+    this.posts = this.postService.filteredPosts;
+    // this.cdRef.detectChanges();
   }
 
   filterByKeyword(keyword: string) {
     this.postService.filterByKeyword(keyword);
+    // console.log(keyword + ' valid posts ' + this.postService.filteredPosts);
+    // this.cdRef.detectChanges();
   }
 
   clearFilters() {

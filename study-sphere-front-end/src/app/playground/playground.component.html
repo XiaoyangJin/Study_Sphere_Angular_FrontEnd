@@ -9,7 +9,8 @@
     </div>
     <div class="main-content">
         <h1>All Posts</h1>
-        <div class="post" *ngFor="let post of postService.posts" [attr.data-keywords]="post.keywords.join(' ')">
+        <p>Number of filtered posts: {{ postService.filteredPosts.length }}</p>
+        <div class="post" *ngFor="let post of postService.filteredPosts" [attr.data-keywords]="post.keywords.join(' ')">
             <div class="post-title">{{ post.title }}</div>
             <div class="post-summary">{{ post.summary }}</div>
             <div class="keywords">Keywords:

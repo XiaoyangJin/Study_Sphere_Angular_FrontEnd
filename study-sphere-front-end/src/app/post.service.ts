@@ -14,6 +14,7 @@ export class PostService {
 
   filterByKeyword(keyword: string) {
     this.filteredPosts = this.posts.filter(post => post.keywords.includes(keyword));
+    // console.log(keyword + ' valid posts ' + this.filteredPosts);
   }
 
   clearFilters() {
