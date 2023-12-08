@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-playground',
@@ -8,9 +9,11 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
-  posts: any[] = [];
+  posts: Post[] = [];
 
-  constructor(public postService: PostService, private cdRef: ChangeDetectorRef) { }
+  constructor(public postService: PostService, private cdRef: ChangeDetectorRef) {
+    this.posts = this.postService.filteredPosts;
+  }
 
   ngOnInit() {
     this.posts = this.postService.filteredPosts;

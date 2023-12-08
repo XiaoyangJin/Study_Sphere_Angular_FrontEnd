@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-create-button',
+  templateUrl: './create-button.component.html',
+  styleUrls: ['./create-button.component.css']
+})
+export class CreateButtonComponent {
+
+  constructor(private router: Router) { }
+
+  navigateToCreatePost() {
+    this.router.navigate(['/create-post']);
+  }
+}

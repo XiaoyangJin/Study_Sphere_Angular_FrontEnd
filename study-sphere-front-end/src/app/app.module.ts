@@ -12,6 +12,7 @@ import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './post.service';
 import { CreatePostComponent } from './createPost/create-post.component';
+import { CreateButtonComponent } from './shared/create-button/create-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreatePostComponent } from './createPost/create-post.component';
     PlaygroundComponent,
     LogoutBarComponent,
     PostComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CreateButtonComponent
   ],
   imports: [
     BrowserModule,
