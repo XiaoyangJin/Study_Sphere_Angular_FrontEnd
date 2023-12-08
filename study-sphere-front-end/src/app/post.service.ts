@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Post } from './models/post.model';
 
 @Injectable({
   providedIn: 'root' // makes the service available throughout the app
 })
 export class PostService {
-  posts: any[] = [
+  posts: Post[] = [
     { id: 1, title: 'Post 1 Title', summary: 'This is a summary of Post 1.', keywords: ['keyword1'] },
     { id: 2, title: 'Post 2 Title', summary: 'This is a summary of Post 2.', keywords: ['keyword2'] },
     { id: 3, title: 'Post 3 Title', summary: 'This is a summary of Post 3.', keywords: ['keyword1', 'keyword3'] },
   ];
 
-  filteredPosts: any[] = this.posts;
+  filteredPosts: Post[] = this.posts;
 
   filterByKeyword(keyword: string) {
     this.filteredPosts = this.posts.filter(post => post.keywords.includes(keyword));
@@ -23,5 +24,12 @@ export class PostService {
 
   getPostById(postId: number) {
     return this.posts.find(post => post.id === postId);
+  }
+
+  addNewPost(newPost: Post) {
+    const newPostId = this.posts.length + 1;
+    newPost.id = newPostId;
+
+    this.posts.push(newPost);
   }
 }
