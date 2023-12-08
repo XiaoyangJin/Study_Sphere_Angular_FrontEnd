@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.postId = +params.get('id')!; // Convert the parameter to a number if needed
+      this.postId = +params.get('id')!;
       this.post = this.postService.getPostById(this.postId);
     });
   }
