@@ -11,6 +11,7 @@ import { PlaygroundComponent } from './playground/playground.component';
 import { LogoutBarComponent } from './shared/logout-bar/logout-bar.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './post.service';
+import { CreatePostComponent } from './createPost/create-post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostService } from './post.service';
     SignupComponent,
     PlaygroundComponent,
     LogoutBarComponent,
-    PostComponent
+    PostComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
