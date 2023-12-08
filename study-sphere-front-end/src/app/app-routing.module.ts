@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { PostComponent } from './post/post.component';
+import { CreatePostComponent } from './createPost/create-post.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule), },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'playground', component: PlaygroundComponent },
-  { path: 'post/:id', component: PostComponent }
+  { path: 'post/:id', component: PostComponent },
+  { path: 'create-post', component: CreatePostComponent }
 ];
 
 @NgModule({
