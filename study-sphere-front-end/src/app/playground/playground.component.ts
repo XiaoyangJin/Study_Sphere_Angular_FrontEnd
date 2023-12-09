@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { Post } from '../models/post.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playground',
@@ -10,8 +11,9 @@ import { Post } from '../models/post.model';
 })
 export class PlaygroundComponent implements OnInit {
   posts: Post[] = [];
+  routerLink: any;
 
-  constructor(public postService: PostService, private cdRef: ChangeDetectorRef) {
+  constructor(public postService: PostService, private cdRef: ChangeDetectorRef, private router: Router) {
     this.posts = this.postService.filteredPosts;
   }
 
@@ -33,4 +35,13 @@ export class PlaygroundComponent implements OnInit {
   getPostById(postId: number) {
     return this.postService.getPostById(postId);
   }
+
+  // goPlaces() {
+  //   this.router.navigate(['/', 'users'])
+  //     .then(nav => {
+  //       console.log(nav); // true if navigation is successful
+  //     }, err => {
+  //       console.log(err) // when there's an error
+  //     });
+  // }
 }
