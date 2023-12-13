@@ -19,13 +19,10 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.filteredPosts;
-    // this.cdRef.detectChanges();
   }
 
   filterByKeyword(keyword: string) {
     this.postService.filterByKeyword(keyword);
-    // console.log(keyword + ' valid posts ' + this.postService.filteredPosts);
-    // this.cdRef.detectChanges();
   }
 
   clearFilters() {
@@ -34,6 +31,11 @@ export class PlaygroundComponent implements OnInit {
 
   getPostById(postId: number) {
     return this.postService.getPostById(postId);
+  }
+
+  navigateToPost(postId: number) {
+    // Use the router to navigate to the post page
+    this.router.navigate(['/post', postId]);
   }
 
   // goPlaces() {
