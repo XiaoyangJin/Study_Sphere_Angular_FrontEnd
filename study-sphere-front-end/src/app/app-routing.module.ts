@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { PostComponent } from './post/post.component';
 import { CreatePostComponent } from './createPost/create-post.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule), },
@@ -18,7 +19,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root' // makes the service available throughout the app
@@ -10,6 +11,12 @@ export class PostService {
     { id: 2, title: 'Post 2 Title', summary: 'This is a summary of Post 2.', keywords: ['keyword2'] },
     { id: 3, title: 'Post 3 Title', summary: 'This is a summary of Post 3.', keywords: ['keyword1', 'keyword3'] },
   ];
+
+  private _postsUpdated = new BehaviorSubject<Post[]>(this.posts);
+
+  get postsUpdated() {
+    return this._postsUpdated.asObservable();
+  }
 
   filteredPosts: Post[] = this.posts;
 
@@ -31,5 +38,6 @@ export class PostService {
     newPost.id = newPostId;
 
     this.posts.push(newPost);
+    this._postsUpdated.next([...this.posts]);
   }
 }

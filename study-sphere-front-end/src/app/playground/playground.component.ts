@@ -19,6 +19,10 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.filteredPosts;
+    this.postService.postsUpdated.subscribe(updatedPosts => {
+      this.posts = updatedPosts;
+      this.cdRef.detectChanges(); // Trigger change detection if needed
+    });
   }
 
   filterByKeyword(keyword: string) {

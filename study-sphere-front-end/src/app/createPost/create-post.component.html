@@ -6,7 +6,8 @@
         <app-logout-bar></app-logout-bar>
         <div class="post-form">
             <label for="title">Title:</label>
-            <input type="text" id="title" placeholder="Enter the title" class="default-content" value="">
+            <input type="text" [(ngModel)]="titleFormControl" id="title" placeholder="Enter the title"
+                class="default-content" value="">
 
             <label for="summary">Summary:</label>
             <textarea id="summary" placeholder="Enter a summary" class="default-content" rows="4"></textarea>
