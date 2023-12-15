@@ -13,6 +13,7 @@ import { PostComponent } from './post/post.component';
 import { PostService } from './post.service';
 import { CreatePostComponent } from './createPost/create-post.component';
 import { CreateButtonComponent } from './shared/create-button/create-button.component';
+import { ProfileButtonComponent } from './shared/profile-button/profile-button.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateButtonComponent } from './shared/create-button/create-button.comp
     LogoutBarComponent,
     PostComponent,
     CreatePostComponent,
-    CreateButtonComponent
+    CreateButtonComponent,
+    ProfileButtonComponent
   ],
   imports: [
     BrowserModule,
