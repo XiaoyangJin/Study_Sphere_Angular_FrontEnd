@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-button',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile-button.component.css']
 })
 export class ProfileButtonComponent {
+  constructor(private router: Router) { }
 
+  navigateToProfile() {
+    this.router.navigate(['/admin']);
+  }
 }
