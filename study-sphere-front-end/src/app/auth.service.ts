@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  private currentUserSubject = new BehaviorSubject<string | null>(null);
 
   users: any[] = [
     {
@@ -51,5 +54,15 @@ export class AuthService {
     newUser.id = this.users.length + 1; // Assign a unique ID
     console.log(newUser);
     this.users.push(newUser);
+  }
+
+  // Method to get the current user observable
+  getCurrentUserObservable() {
+    return this.currentUserSubject.asObservable();
+  }
+
+  // Method to set the current user
+  setCurrentUser(username: string) {
+    this.currentUserSubject.next(username);
   }
 }

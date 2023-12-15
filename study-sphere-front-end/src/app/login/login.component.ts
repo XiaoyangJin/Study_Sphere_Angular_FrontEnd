@@ -24,6 +24,7 @@ export class LoginComponent {
     if (!user) {
       alert('Invalid username or password');
     } else {
+      this.authService.setCurrentUser(this.form.value.username);
       this.router.navigateByUrl('/admin')
       // this.isFormSubmitted = true;
     }
