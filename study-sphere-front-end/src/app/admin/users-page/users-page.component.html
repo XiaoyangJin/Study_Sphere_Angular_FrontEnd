@@ -6,7 +6,11 @@
 
     <main>
         <div class="profile-container">
-            <div><img class="profile-picture" src="https://imgur.com/uq1ykDK.jpg" alt="Profile Picture"></div>
+            <div>
+                <img class="profile-picture" [src]="profilePictureUrl" alt="Profile Picture">
+                <input type="file" (change)="onFileSelected($event)" accept="image/*">
+                <button (click)="uploadProfilePicture()">Upload Picture</button>
+            </div>
 
 
             <div class="profile-info">
