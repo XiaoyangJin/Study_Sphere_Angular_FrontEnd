@@ -4,29 +4,34 @@
     </header>
     <main>
         <app-logout-bar></app-logout-bar>
-        <div class="post-form">
-            <label for="title">Title:</label>
-            <input type="text" [(ngModel)]="titleFormControl" id="title" placeholder="Enter the title"
-                class="default-content" value="">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="post-form">
+                <label for="title">Title:</label>
+                <input type="text" required id="title" placeholder="Enter the title" class="default-content"
+                    name="title" ngModel>
 
-            <label for="summary">Summary:</label>
-            <textarea id="summary" placeholder="Enter a summary" class="default-content" rows="4"></textarea>
+                <label for="summary">Summary:</label>
+                <textarea id="summary" placeholder="Enter a summary" class="default-content" rows="4" name="summary"
+                    ngModel></textarea>
 
-            <label for="main-content">Main Content:</label>
-            <textarea id="main-content" placeholder="Enter the main content" class="default-content"
-                rows="8"></textarea>
+                <label for="main-content">Main Content:</label>
+                <textarea id="main-content" placeholder="Enter the main content" class="default-content" rows="8"
+                    name="mainContent" ngModel></textarea>
 
-            <label for="keywords">Keywords:</label>
-            <select id="keywords" multiple>
-                <option value="keyword1" selected>Keyword 1</option>
-                <option value="keyword2">Keyword 2</option>
-                <option value="keyword3" selected>Keyword 3</option>
-            </select>
+                <label for="keywords">Keywords:</label>
+                <select id="keywords" multiple name="keywords" ngModel>
+                    <option value="keyword1">Keyword 1</option>
+                    <option value="keyword2">Keyword 2</option>
+                    <option value="keyword3">Keyword 3</option>
+                </select>
 
-            <label for="image">Upload Image:</label>
-            <input type="file" id="image">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" (change)="onFileChange($event)">
 
-            <button type="submit" (click)="onSubmit()">Create Post</button>
-        </div>
+                <input type="checkbox" ngModel [ngModelOptions]="{standalone: true}"> Show more options?
+
+                <button type="submit">Create Post</button>
+            </div>
+        </form>
     </main>
 </body>

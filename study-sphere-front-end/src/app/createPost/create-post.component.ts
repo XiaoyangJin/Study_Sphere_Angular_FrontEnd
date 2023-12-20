@@ -32,28 +32,27 @@ export class CreatePostComponent implements OnChanges {
     throw new Error('Method not implemented.');
   }
 
-  onSubmit() {
+  onFileChange(event: Event) {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      console.log('FileUpload -> files', fileList);
+      // Handle the file processing here
+    }
+  }
 
-    this.newPost.title = this.titleFormControl.value;
-    this.newPost.summary = this.summaryFormControl.value;
-    this.newPost.keywords = this.keywordsFormControl.value;
+  onSubmit(form: NgForm) {
+    console.log('Form Data: ', form.value);
+    // Use form values to update `newPost`
+    this.newPost.title = form.value.title;
+    this.newPost.summary = form.value.summary;
+    this.newPost.keywords = form.value.keywords; // assuming keywords is a single value or an array of values
 
-    // this.titleFormControl.setValue(this.titleFormControl.value);
-
-    console.log(this.newPost + "before service");
-
+    // Your existing logic...
     this.postService.addNewPost(this.newPost);
-    console.log(this.newPost + "after service");
-    console.log("click create");
-
-
     this.router.navigate(['/playground']);
 
-    this.newPost = {
-      id: 0,
-      title: '',
-      summary: '',
-      keywords: []
-    };
+    // Resetting the form if needed
+    form.reset();
   }
 }
