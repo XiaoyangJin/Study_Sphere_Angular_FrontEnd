@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from './models/post.model';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root' // makes the service available throughout the app
@@ -12,7 +13,10 @@ export class PostService {
     { id: 3, title: 'Post 3 Title', summary: 'This is a summary of Post 3.', keywords: ['keyword1', 'keyword3'] },
   ];
 
+  private apiUrl = 'http://localhost:8080/api/posts'; // API URL
+
   private _postsUpdated = new BehaviorSubject<Post[]>(this.posts);
+
 
   get postsUpdated() {
     return this._postsUpdated.asObservable();

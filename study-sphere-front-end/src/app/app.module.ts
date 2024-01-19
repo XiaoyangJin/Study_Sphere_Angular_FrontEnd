@@ -14,6 +14,7 @@ import { PostService } from './post.service';
 import { CreatePostComponent } from './createPost/create-post.component';
 import { CreateButtonComponent } from './shared/create-button/create-button.component';
 import { ProfileButtonComponent } from './shared/profile-button/profile-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProfileButtonComponent } from './shared/profile-button/profile-button.c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
