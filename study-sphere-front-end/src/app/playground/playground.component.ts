@@ -25,29 +25,20 @@ export class PlaygroundComponent implements OnInit {
     });
   }
 
-  filterByKeyword(keyword: string) {
-    this.postService.filterByKeyword(keyword);
-  }
+  // filterByKeyword(keyword: string) {
+  //   this.postService.filterByKeyword(keyword);
+  // }
 
-  clearFilters() {
-    this.postService.clearFilters();
-  }
+  // clearFilters() {
+  //   this.postService.clearFilters();
+  // }
 
-  getPostById(postId: number) {
-    return this.postService.getPostById(postId);
-  }
+  // getPostById(postId: number) {
+  //   // return this.postService.getPostById(postId);
+  // }
 
-  navigateToPost(postId: number) {
-    // Use the router to navigate to the post page
-    this.router.navigate(['/post', postId]);
-  }
-
-  // goPlaces() {
-  //   this.router.navigate(['/', 'users'])
-  //     .then(nav => {
-  //       console.log(nav); // true if navigation is successful
-  //     }, err => {
-  //       console.log(err) // when there's an error
-  //     });
+  // navigateToPost(postId: number) {
+  //   // Use the router to navigate to the post page
+  //   this.router.navigate(['/post', postId]);
   // }
 }

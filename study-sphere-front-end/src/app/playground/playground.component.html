@@ -4,23 +4,20 @@
         <h2>Groups</h2>
         <app-create-button></app-create-button>
         <app-profile-button></app-profile-button>
-        <button class="clear-button" (click)="clearFilters()">Clear All Filters</button>
+        <!-- <button class="clear-button" (click)="clearFilters()">Clear All Filters</button>
         <div class="keyword" (click)="filterByKeyword('keyword1')">Keyword 1</div>
         <div class="keyword" (click)="filterByKeyword('keyword2')">Keyword 2</div>
-        <div class="keyword" (click)="filterByKeyword('keyword3')">Keyword 3</div>
+        <div class="keyword" (click)="filterByKeyword('keyword3')">Keyword 3</div> -->
     </div>
     <div class="main-content">
         <h1>All Posts</h1>
-        <p>Number of filtered posts: {{ postService.filteredPosts.length }}</p>
-        <div class="post" *ngFor="let post of postService.filteredPosts" [attr.data-keywords]="post.keywords.join(' ')">
+
+        <div class="post" *ngFor="let post of posts">
             <div class="post-title">{{ post.title }}</div>
             <div class="post-summary">{{ post.summary }}</div>
-            <div class="keywords">Keywords:
-                <span class="keyword" *ngFor="let keyword of post.keywords">{{ keyword }}</span>
-            </div>
 
             <!-- <a [routerLink]="['/post', post.id]">Read More</a> -->
-            <div class="button" (click)="navigateToPost(post.id)">Read More</div>
+            <!-- <div class="button" (click)="navigateToPost(post.id)">Read More</div> -->
         </div>
     </div>
 </div>

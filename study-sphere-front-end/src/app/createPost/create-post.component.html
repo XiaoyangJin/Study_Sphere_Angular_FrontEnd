@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
     <header>
         <h1>Create a New Post</h1>
     </header>
@@ -34,4 +34,38 @@
             </div>
         </form>
     </main>
+</body> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- create-post.component.html -->
+    <form #f="ngForm" (ngSubmit)="createPost(title.value, summary.value, maincontent.value)">
+        <label for="title">Title:</label>
+        <input type="text" #title required id="title" placeholder="Enter the title" class="default-content" name="title"
+            ngModel>
+
+        <label for="summary">Summary:</label>
+        <textarea id="summary" #summary placeholder="Enter a summary" class="default-content" rows="4" name="summary"
+            ngModel></textarea>
+
+        <label for="main-content">Main Content:</label>
+        <textarea id="main-content" #maincontent placeholder="Enter the main content" class="default-content" rows="8"
+            name="mainContent" ngModel></textarea>
+        <!-- <input type="text" #title placeholder="Title">
+        <input type="text" #summary placeholder="Summary">
+        <input type="text" #maincontent placeholder="Main Content"> -->
+        <!-- <input type="text" #keywords placeholder="Keywords (comma-separated)"> -->
+        <button type="submit">Create Post</button>
+    </form>
 </body>
+
+</html>

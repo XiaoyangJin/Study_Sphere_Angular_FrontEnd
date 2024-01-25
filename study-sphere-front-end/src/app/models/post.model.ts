@@ -1,6 +1,7 @@
 export interface Post {
-    id: number;
+    // id: number;
     title: string;
     summary: string;
-    keywords: string[];
+    main_content: string;
+    // keywords: string[];
 }
