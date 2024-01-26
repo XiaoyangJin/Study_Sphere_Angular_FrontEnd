@@ -28,3 +28,5 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 ## Contact
 If you want to contact me, you can reach me at [jin.xiaoya@northeastern.edu].
 
+## License
+This project uses the following license: [Apache License].
