@@ -3,5 +3,4 @@ export interface Post {
     title: string;
     summary: string;
     main_content: string;
-    // keywords: string[];
 }

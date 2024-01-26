@@ -26,17 +26,6 @@ export class PostService {
     return this._postsUpdated.asObservable();
   }
 
-  filteredPosts: Post[] = this.posts;
-
-  filterByKeyword(keyword: string) {
-    // this.filteredPosts = this.posts.filter(post => post.keywords.includes(keyword));
-    // console.log(keyword + ' valid posts ' + this.filteredPosts);
-  }
-
-  clearFilters() {
-    this.filteredPosts = this.posts; // Reset filteredPosts to all posts
-  }
-
   getPostById(postId: number) {
     // return this.posts.find(post => post.id === postId);
   }
