@@ -14,23 +14,21 @@ export class PlaygroundComponent implements OnInit {
   routerLink: any;
 
   constructor(public postService: PostService, private cdRef: ChangeDetectorRef, private router: Router) {
-    this.posts = this.postService.posts;
   }
 
   ngOnInit() {
-    this.posts = this.postService.posts;
-    this.postService.postsUpdated.subscribe(updatedPosts => {
-      this.posts = updatedPosts;
-      this.cdRef.detectChanges(); // Trigger change detection if needed
+    this.postService.fetchPosts();
+    this.postService.postsUpdated.subscribe((posts: Post[]) => {
+      this.posts = posts;
     });
   }
 
-  // getPostById(postId: number) {
-  //   // return this.postService.getPostById(postId);
-  // }
+  getPostById(postId: number) {
+    return this.postService.getPostById(postId);
+  }
 
-  // navigateToPost(postId: number) {
-  //   // Use the router to navigate to the post page
-  //   this.router.navigate(['/post', postId]);
-  // }
+  navigateToPost(postId: number) {
+    // Use the router to navigate to the post page
+    this.router.navigate(['/post', postId]);
+  }
 }

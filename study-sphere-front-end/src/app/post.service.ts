@@ -1,45 +1,35 @@
 import { Injectable } from '@angular/core';
-import { Post } from './models/post.model';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Post } from './models/post.model';
 
 @Injectable({
-  providedIn: 'root' // makes the service available throughout the app
+  providedIn: 'root'
 })
 export class PostService {
-  posts: Post[] = [
-    { title: 'Post 1 Title', summary: 'This is a summary of Post 1.', main_content: 'maincontent1' },
-    { title: 'Post 2 Title', summary: 'This is a summary of Post 2.', main_content: 'maincontent2' },
-    { title: 'Post 3 Title', summary: 'This is a summary of Post 3.', main_content: 'maincontent3' },
-
-
-  ];
-
   private apiUrl = 'http://localhost:8080/api/posts'; // API URL
 
-  private _postsUpdated = new BehaviorSubject<Post[]>(this.posts);
+  private _postsUpdated = new BehaviorSubject<Post[]>([]);
 
   constructor(private http: HttpClient) { }
-
 
   get postsUpdated() {
     return this._postsUpdated.asObservable();
   }
 
-  getPostById(postId: number) {
-    // return this.posts.find(post => post.id === postId);
+  fetchPosts(): void {
+    this.http.get<Post[]>(this.apiUrl).subscribe(posts => {
+      this._postsUpdated.next(posts);
+    }, error => {
+      console.error('Error fetching posts:', error);
+    });
   }
 
-  // addNewPost(newPost: Post) {
-  //   // const newPostId = this.posts.length + 1;
-  //   // newPost.id = newPostId;
+  getPostById(postId: number): Observable<Post> {
+    return this.http.get<Post>(`${this.apiUrl}/${postId}`);
+  }
 
-  //   // this.posts.push(newPost);
-  //   // this._postsUpdated.next([...this.posts]);
-  //   return this.http.post(this.apiUrl, newPost);
-  // }
   addNewPost(newPost: Post): Observable<Post> {
-    // Send POST request to the Spring Boot backend
     return this.http.post<Post>(this.apiUrl, newPost);
   }
 }
