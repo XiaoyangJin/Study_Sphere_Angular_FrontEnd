@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../models/post.model';
 import { PostService } from '../post.service';
 
 @Component({
@@ -8,15 +9,18 @@ import { PostService } from '../post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  postId: number = 0;
-  post: any;
+  post: Post | undefined;
 
   constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.postId = +params.get('id')!;
-      this.post = this.postService.getPostById(this.postId);
+    this.route.params.subscribe(params => {
+      const postId = params['id'];
+      if (postId) {
+        this.postService.getPostById(postId).subscribe(post => {
+          this.post = post;
+        });
+      }
     });
   }
 }

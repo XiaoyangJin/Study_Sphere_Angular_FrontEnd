@@ -12,7 +12,8 @@
             <div class="post-title">{{ post.title }}</div>
             <div class="post-summary">{{ post.summary }}</div>
 
-            <div class="button" (click)="navigateToPost(post.id ?? 0)">Read More</div>
+            <div class="button" *ngIf="post.id !== undefined" (click)="navigateToPost(post.id)">Read More</div>
         </div>
+
     </div>
 </div>
