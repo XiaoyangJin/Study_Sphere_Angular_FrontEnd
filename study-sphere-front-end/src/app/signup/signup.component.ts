@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -9,6 +9,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  // form: FormGroup = new FormGroup({
+  //   name: new FormControl('')
+  // })
 
   signupForm: FormGroup = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
@@ -36,7 +40,7 @@ export class SignupComponent {
       this.authService.addUser(newUser);
 
       // Redirect to the public page or perform other actions as needed
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
 
       // Reset the signupForm fields to empty after signup
       this.signupForm.reset();
