@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent {
 
-  form: FormGroup = this.fb.group({
+  signupForm: FormGroup = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
@@ -18,9 +18,9 @@ export class SignupComponent {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   signup() {
-    // Get the form values
-    const username = this.form.get('username')?.value;
-    const password = this.form.get('password')?.value;
+    // Get the signupForm values
+    const username = this.signupForm.get('username')?.value;
+    const password = this.signupForm.get('password')?.value;
 
     console.log(username);
 
@@ -38,8 +38,8 @@ export class SignupComponent {
       // Redirect to the public page or perform other actions as needed
       this.router.navigate(['']);
 
-      // Reset the form fields to empty after signup
-      this.form.reset();
+      // Reset the signupForm fields to empty after signup
+      this.signupForm.reset();
     } else {
       // Handle the case where either or both fields are empty
       // You can show an error message or perform other actions
