@@ -34,7 +34,7 @@ import { SignupModule } from './signup/signup.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SignupModule
+    SignupModule,
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
