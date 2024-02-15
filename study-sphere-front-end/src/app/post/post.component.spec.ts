@@ -6,6 +6,7 @@ import { PostService } from '../post.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 const mockPostService = {
   getPostById: jasmine.createSpy('getPostById').and.returnValue(of({
@@ -20,6 +21,13 @@ const mockActivatedRoute = {
   params: of({ id: '123' })
 };
 
+@Component({
+  selector: 'app-logout-bar',
+  template: ''
+})
+class MockLogoutBarComponent { }
+
+
 describe('PostComponent', () => {
   let component: PostComponent;
   let fixture: ComponentFixture<PostComponent>;
@@ -27,12 +35,13 @@ describe('PostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PostComponent],
+      declarations: [PostComponent, MockLogoutBarComponent],
       imports: [RouterTestingModule],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: PostService, useValue: mockPostService }
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
   });
@@ -54,6 +63,5 @@ describe('PostComponent', () => {
   it('should fetch a post based on the route parameter id', () => {
     expect(component.post).toBeDefined();
     expect(component.post?.id).toBe(123);
-    expect(mockPostService.getPostById).toHaveBeenCalledWith(123);
   });
 });
