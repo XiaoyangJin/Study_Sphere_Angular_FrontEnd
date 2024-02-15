@@ -4,6 +4,7 @@ import { CreatePostComponent } from './create-post.component';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PostService } from '../post.service';
+import { FormsModule } from '@angular/forms';
 
 describe('CreatePostComponent', () => {
   let component: CreatePostComponent;
@@ -12,7 +13,7 @@ describe('CreatePostComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CreatePostComponent],
-      imports: [HttpClientTestingModule], // Include HttpClientTestingModule here
+      imports: [HttpClientTestingModule, FormsModule], // Include HttpClientTestingModule and Add FormsModule
       providers: [PostService] // Provide PostService
     })
       .compileComponents();
