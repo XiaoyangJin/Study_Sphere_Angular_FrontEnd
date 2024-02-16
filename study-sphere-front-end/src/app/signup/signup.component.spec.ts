@@ -54,24 +54,16 @@ describe('SignupComponent', () => {
 
   //can correctly extract form values
   it('should extract username and password from the signupForm and add a new user', () => {
-    // Set up the form values
     component.signupForm.controls['username'].setValue('testname@email.com');
     component.signupForm.controls['password'].setValue('testpassword');
 
-    // Call the signup method
     component.signup();
 
-    // Verify that authService.addUser was called with the correct parameters
     expect(authServiceMock.addUser).toHaveBeenCalledWith({
       username: 'testname@email.com',
       password: 'testpassword'
     });
-
-    // No need to check the form values after signup, as they're expected to be null due to form reset
   });
-
-
-
 
   //valid vs invalid
   it('form should be valid', async(() => {
