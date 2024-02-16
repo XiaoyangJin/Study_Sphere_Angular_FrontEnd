@@ -58,5 +58,20 @@ describe('PostService', () => {
     req.flush(mockPost);
   });
 
+  // test ability to add new post
+  it('should add a new post', () => {
+    const newPost: Post = { title: 'New Post', summary: 'New summary', main_content: 'New content' };
+
+    service.addNewPost(newPost).subscribe(post => {
+      expect(post).toEqual(newPost);
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:8080/api/posts');
+    expect(req.request.method).toEqual('POST');
+    expect(req.request.body).toEqual(newPost);
+    req.flush(newPost);
+  });
+
+
 
 });
