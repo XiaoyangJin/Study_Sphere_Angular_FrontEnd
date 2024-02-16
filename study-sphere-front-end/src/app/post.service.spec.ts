@@ -46,7 +46,7 @@ describe('PostService', () => {
 
   // test get post by ID
   it('should get a post by ID', () => {
-    const mockPost = { id: 1, title: 'Test Post', content: 'Test content' };
+    const mockPost = { id: 1, title: 'Test Post', summary: 'Test summary', main_content: 'Test content' };
     const postId = 1;
 
     service.getPostById(postId).subscribe(post => {
