@@ -40,9 +40,9 @@ export class SignupComponent {
 
     console.log(username);
 
-    // Check if both username and password are not empty
-    if (username.trim() !== '' && password.trim() !== '') {
-      // Both fields are not empty, proceed with signup
+    // Check if both username and password have valid length(is it needed?)
+    if (username.Length < 4 && password.length < 8) {
+      // Both fields have valid length, proceed with signup
       const newUser = {
         username: username,
         password: password
