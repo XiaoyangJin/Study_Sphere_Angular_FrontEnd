@@ -10,16 +10,28 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent {
 
-  // form: FormGroup = new FormGroup({
-  //   name: new FormControl('')
-  // })
+  signupForm!: FormGroup;
+  info = {
+    username: '',
+    password: ''
+  };
 
-  signupForm: FormGroup = this.fb.group({
-    username: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required]
-  });
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
+    this.createForm();
+  }
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
+  createForm(): void {
+    this.signupForm = new FormGroup({
+      'username': new FormControl(this.info.username, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      'password': new FormControl(this.info.password, [
+        Validators.required,
+        Validators.minLength(8)
+      ])
+    })
+  }
 
   signup() {
     // Get the signupForm values
