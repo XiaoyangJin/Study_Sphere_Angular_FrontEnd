@@ -101,6 +101,7 @@ describe('SignupComponent', () => {
     expect(component.signupForm.valid).toBeFalsy();
   }));
 
+  //auth test
   it('should add user and redirect to login on successful signup', fakeAsync(() => {
     spyOn(router, 'navigate');
     component.signupForm.controls['username'].setValue('testname@email.com');
@@ -110,5 +111,14 @@ describe('SignupComponent', () => {
     expect(authServiceMock.addUser).toHaveBeenCalledWith({ username: 'testname@email.com', password: 'testpassword' });
     expect(router.navigate).toHaveBeenCalledWith(['/login']);
   }));
+
+  // reset the signup form
+  it('should reset the signupForm after successful signup', () => {
+    component.signupForm.controls['username'].setValue('testuser');
+    component.signupForm.controls['password'].setValue('password123');
+    component.signup();
+    expect(component.signupForm.get('username')?.value).toBeNull();
+    expect(component.signupForm.get('password')?.value).toBeNull();
+  });
 
 });
