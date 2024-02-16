@@ -40,9 +40,8 @@ export class SignupComponent {
 
     console.log(username);
 
-    // Check if both username and password have valid length(is it needed?)
-    if (username.Length < 4 && password.length < 8) {
-      // Both fields have valid length, proceed with signup
+    // If form is valid, proceed with signup
+    if (this.signupForm.valid) {
       const newUser = {
         username: username,
         password: password
@@ -57,8 +56,9 @@ export class SignupComponent {
       // Reset the signupForm fields to empty after signup
       this.signupForm.reset();
     } else {
-      // Handle the case where either or both fields are empty
+      // Handle the case where either or both fields are invalid
       // You can show an error message or perform other actions
     }
   }
+
 }
