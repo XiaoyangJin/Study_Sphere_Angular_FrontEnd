@@ -62,4 +62,17 @@ describe('AuthService', () => {
     expect(service.users.length).toBeGreaterThan(initialLength);
     expect(service.users.some(u => u.username === newUser.username)).toBeTrue();
   });
+
+  // Additional tests for getCurrentUserObservable() and setCurrentUser()
+  it('setCurrentUser() should update currentUserSubject', (done: DoneFn) => {
+    const username = 'testUser';
+    service.getCurrentUserObservable().subscribe(value => {
+      if (value) {
+        expect(value).toEqual(username);
+        done();
+      }
+    });
+
+    service.setCurrentUser(username);
+  });
 });
