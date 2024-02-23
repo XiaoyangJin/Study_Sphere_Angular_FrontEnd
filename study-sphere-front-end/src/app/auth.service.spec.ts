@@ -39,6 +39,7 @@ describe('AuthService', () => {
     const result = service.login(user.username, user.password);
     expect(result).toBeTruthy();
     expect(localStorage.setItem).toHaveBeenCalledWith('session', jasmine.any(String));
+    // jasmine.any(String) => test expects the value to be of the type String.
   });
 
   // use fake data as temp check
