@@ -47,4 +47,11 @@ describe('AuthService', () => {
     expect(result).toBeFalsy();
     expect(localStorage.setItem).not.toHaveBeenCalled();
   });
+
+  it('logout() should clear session and navigate to root', () => {
+    service.logout();
+    expect(service.session).toBeUndefined();
+    expect(localStorage.removeItem).toHaveBeenCalledWith('session');
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/');
+  });
 });
