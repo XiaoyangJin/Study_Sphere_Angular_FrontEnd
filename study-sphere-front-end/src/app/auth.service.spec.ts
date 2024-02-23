@@ -54,4 +54,12 @@ describe('AuthService', () => {
     expect(localStorage.removeItem).toHaveBeenCalledWith('session');
     expect(router.navigateByUrl).toHaveBeenCalledWith('/');
   });
+
+  it('addUser() should add a new user correctly', () => {
+    const newUser = { name: 'test', username: 'test@test.com', password: 'test' };
+    const initialLength = service.users.length;
+    service.addUser(newUser);
+    expect(service.users.length).toBeGreaterThan(initialLength);
+    expect(service.users.some(u => u.username === newUser.username)).toBeTrue();
+  });
 });
