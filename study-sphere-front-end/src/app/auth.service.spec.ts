@@ -19,9 +19,25 @@ describe('AuthService', () => {
       ]
     });
     service = TestBed.inject(AuthService);
+    router = TestBed.inject(Router);
+
+    // Mock localStorage
+    spyOn(localStorage, 'setItem');
+    spyOn(localStorage, 'removeItem');
+    spyOn(localStorage, 'getItem').and.returnValue(null);
+
+    // Mock navigation
+    spyOn(router, 'navigateByUrl');
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('login() should authenticate user and store session', () => {
+    const user = { username: 'xy@gmail.com', password: '12345' };
+    const result = service.login(user.username, user.password);
+    expect(result).toBeTruthy();
+    expect(localStorage.setItem).toHaveBeenCalledWith('session', jasmine.any(String));
   });
 });
