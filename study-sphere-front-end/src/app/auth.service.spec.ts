@@ -40,4 +40,11 @@ describe('AuthService', () => {
     expect(result).toBeTruthy();
     expect(localStorage.setItem).toHaveBeenCalledWith('session', jasmine.any(String));
   });
+
+  // use fake data as temp check
+  it('login() should not authenticate with wrong credentials', () => {
+    const result = service.login('wrong', 'credentials');
+    expect(result).toBeFalsy();
+    expect(localStorage.setItem).not.toHaveBeenCalled();
+  });
 });
