@@ -1,45 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PlaygroundComponent } from './playground.component';
-
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PostService } from '../post.service';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
 import { ChangeDetectorRef } from '@angular/core';
-
-@Component({
-  selector: 'app-logout-bar',
-  template: ''
-})
-class MockLogoutBarComponent { }
-
-class MockPostService {
-  fetchPosts = jasmine.createSpy('fetchPosts');
-  postsUpdated = of([{ id: 1, title: 'Test Post', summary: 'Test Summary', main_content: 'This is a test' }]);
-
-  getPostById = jasmine.createSpy('getPostById').and.returnValue({ id: 1, title: 'Test Post', summary: 'Test Summary', main_content: 'This is a test' });
-}
-
-class MockRouter {
-  navigate = jasmine.createSpy('navigate');
-}
+import { of } from 'rxjs';
 
 describe('PlaygroundComponent', () => {
   let component: PlaygroundComponent;
   let fixture: ComponentFixture<PlaygroundComponent>;
-  let mockPostService: MockPostService;
-  let mockRouter: MockRouter;
+  let mockPostService = {
+    fetchPosts: jasmine.createSpy('fetchPosts'),
+    postsUpdated: of([{ id: 1, title: 'Test Post', summary: 'Test Summary', main_content: 'This is a test' }]),
+    getPostById: jasmine.createSpy('getPostById').and.returnValue({ id: 1, title: 'Test Post', summary: 'Test Summary', main_content: 'This is a test' })
+  };
+  let mockRouter = {
+    navigate: jasmine.createSpy('navigate')
+  };
 
   beforeEach(async () => {
-    mockPostService = new MockPostService();
-    mockRouter = new MockRouter();
-
     await TestBed.configureTestingModule({
-      declarations: [MockLogoutBarComponent, PlaygroundComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [PlaygroundComponent],
       providers: [
         { provide: PostService, useValue: mockPostService },
         { provide: Router, useValue: mockRouter },
@@ -49,31 +29,15 @@ describe('PlaygroundComponent', () => {
       .compileComponents();
   });
 
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [PlaygroundComponent],
-      imports: [HttpClientTestingModule], // Include HttpClientTestingModule here
-      providers: [PostService] // Provide PostService
-    })
-      .compileComponents();
-  });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(PlaygroundComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges(); // This triggers ngOnInit
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should call fetchPosts and subscribe to postsUpdated on ngOnInit', () => {
-  //   // ngOnInit is called by fixture.detectChanges() in the beforeEach block
-  //   fixture.detectChanges();
-  //   expect(mockPostService.fetchPosts).toHaveBeenCalled();
-  //   expect(component.posts.length).toBeGreaterThan(0);
-  // });
-
+  // You can add your test cases here
 });
