@@ -9,6 +9,10 @@ Welcome to the `Study_Sphere_Angular_FrontEnd` repository! This repository conta
 - **Angular Framework**: Built using the powerful Angular framework for a robust and scalable frontend architecture.
 - **Integration with Backend**: Seamlessly communicates with the Spring Boot backend for data management and storage.
 
+## Page Display
+<img width="1268" alt="image" src="https://github.com/XiaoyangJin/Study_Sphere_Angular_FrontEnd/assets/90944062/36439a53-3100-4f19-a0c9-0c8f5e392c0e">
+
+
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
 - Node.js and npm installed (see [Node.js](https://nodejs.org/))
