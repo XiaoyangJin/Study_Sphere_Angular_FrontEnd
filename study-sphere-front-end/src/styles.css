@@ -1,2 +1,154 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+
+:root {
+    --main--bg--color: #F1FAFF;
+    --header--footer--bg--color: #0C5A9A;
+    --card--bg--color: #7991BC;
+
+    --text--font: "Monaco", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: var(--main--bg--color);
+
+    font-family: "Monaco", sans-serif;
+
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+}
+
+input {
+    font: inherit;
+}
+
+.header {
+    background-color: var(--header--footer--bg--color);
+
+    grid-area: header;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.header__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.header img {
+    width: 5rem;
+    height: 5rem;
+
+    margin-right: 10px;
+    border: 2px solid #FAF0E6;
+    border-radius: 50px;
+}
+
+.header__title {
+    color: #FAF0E6;
+
+    font-size: 2.5rem;
+}
+
+.header__menu__list {
+    list-style-type: none;
+
+    place-items: center;
+    width: 100%;
+}
+
+.header__menu__item {
+    padding: 1rem;
+    margin: 0 0.5rem;
+}
+
+.header__menu__item a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 1rem;
+}
+
+.header__menu__item a:hover {
+    text-decoration: underline;
+}
+
+
+.footer {
+    background-color: var(--header--footer--bg--color);
+
+    grid-area: footer;
+
+    padding: 1rem;
+}
+
+.footer__menu__list {
+    padding: 1rem;
+}
+
+.footer__menu__item {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.footer__menu__item a {
+    color: #FAF0E6;
+    font-size: smaller;
+    text-decoration: none;
+
+    padding: 1rem;
+}
+
+.footer__menu__item a:hover {
+
+    text-decoration: underline;
+}
+
+@media (min-width: 40rem) {
+
+    .header__title {
+        font-size: 3rem;
+    }
+
+    .header__menu__list {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    .header__menu__item {
+        grid-column: span 4;
+    }
+
+    .footer__menu__list {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    .footer__menu__item {
+        grid-column: span 2;
+    }
+}
