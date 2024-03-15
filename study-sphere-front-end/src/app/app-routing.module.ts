@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'playground', component: PlaygroundComponent, canActivate: [AuthGuardService] },
   { path: 'post/:id', component: PostComponent, canActivate: [AuthGuardService] },
-  { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuardService] }
+  { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuardService] },
+  { path: '**', redirectTo: 'playground', pathMatch: 'full' }
 ];
 
 @NgModule({
