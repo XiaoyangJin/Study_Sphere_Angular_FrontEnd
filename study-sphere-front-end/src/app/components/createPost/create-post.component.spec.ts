@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CreatePostComponent } from './create-post.component';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { PostService } from '../post.service';
+import { PostService } from '../../services/post.service';
 import { FormsModule } from '@angular/forms';
 
 describe('CreatePostComponent', () => {

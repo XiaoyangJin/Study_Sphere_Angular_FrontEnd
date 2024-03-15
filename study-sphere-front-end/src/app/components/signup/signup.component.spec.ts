@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, By } from '@angular/platform-browser'; // allow us to select elements from the DOM
 import { DebugElement } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../services/auth.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
 

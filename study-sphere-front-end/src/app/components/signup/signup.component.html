@@ -30,7 +30,7 @@
                     <p class="is__required">Fields marked with an asterisk (*) are required.</p>
                 </div>
                 <label class="register__label">
-                    <span class="register__name-label">Name(Email)</span>
+                    <span class="username">Name(Email)</span>
                     <span class="is__required">*</span>:
 
                 </label>
@@ -62,7 +62,7 @@
                     Do you want us to send you annoying emails?
                 </label>
 
-                <button class="register__submit" type="submit">Register</button>
+                <button class="register__submit" type="submit" (click)="signup()">Register</button>
             </form>
             <div class="login__link">
                 Already have an account? <a href="/login">Log in</a>

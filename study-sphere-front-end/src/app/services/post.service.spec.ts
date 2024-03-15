@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PostService } from './post.service';
-import { Post } from './models/post.model';
+import { Post } from '../interface/post';
 
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 

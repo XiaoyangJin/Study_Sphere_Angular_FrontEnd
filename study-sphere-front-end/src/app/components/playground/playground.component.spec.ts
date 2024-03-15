@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PlaygroundComponent } from './playground.component';
-import { PostService } from '../post.service';
+import { PostService } from '../../services/post.service';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import { of } from 'rxjs';

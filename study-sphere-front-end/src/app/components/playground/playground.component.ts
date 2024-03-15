@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PostService } from '../post.service';
+import { PostService } from '../../services/post.service';
 import { ChangeDetectorRef } from '@angular/core';
-import { Post } from '../models/post.model';
+import { Post } from '../../interface/post';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 

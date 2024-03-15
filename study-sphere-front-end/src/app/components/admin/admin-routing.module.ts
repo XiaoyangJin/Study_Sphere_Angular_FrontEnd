@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PlaygroundComponent } from '../playground/playground.component';
 import { AdminComponent } from './admin.component';
-import { UsersPageComponent } from './users-page/users-page.component';
+import { UsersPageComponent } from '../users-page/users-page.component';
 
 const routes: Routes = [
   {

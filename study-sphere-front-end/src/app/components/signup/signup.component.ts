@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -39,6 +39,7 @@ export class SignupComponent {
     const password = this.signupForm.get('password')?.value;
 
     console.log(username);
+    console.log(password);
 
     // If form is valid, proceed with signup
     if (this.signupForm.valid) {

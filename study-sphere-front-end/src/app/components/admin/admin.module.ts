@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { UsersPageComponent } from './users-page/users-page.component';
+import { UsersPageComponent } from '../users-page/users-page.component';
 
 @NgModule({
   declarations: [

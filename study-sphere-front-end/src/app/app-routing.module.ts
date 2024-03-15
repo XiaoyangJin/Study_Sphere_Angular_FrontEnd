@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from './auth.guard';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { PlaygroundComponent } from './playground/playground.component';
-import { PostComponent } from './post/post.component';
-import { CreatePostComponent } from './createPost/create-post.component';
+import { AuthGuardService } from './guards/auth.guard';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { PlaygroundComponent } from './components/playground/playground.component';
+import { PostComponent } from './components/post/post.component';
+import { CreatePostComponent } from './components/createPost/create-post.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./public/public.module').then((m) => m.PublicModule), },
+  // { path: '', loadChildren: () => import('./components/public/public.module').then((m) => m.PublicModule), },
   // { path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule), canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
