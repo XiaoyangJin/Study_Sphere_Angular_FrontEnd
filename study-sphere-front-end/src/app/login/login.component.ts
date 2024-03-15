@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  form: FormGroup = this.fb.group({
+  loginForm: FormGroup = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
@@ -20,11 +20,11 @@ export class LoginComponent {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   login() {
-    let user = this.authService.login(this.form.value.username, this.form.value.password);
+    let user = this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
     if (!user) {
       alert('Invalid username or password');
     } else {
-      this.authService.setCurrentUser(this.form.value.username);
+      this.authService.setCurrentUser(this.loginForm.value.username);
       this.router.navigateByUrl('/admin')
       // this.isFormSubmitted = true;
     }

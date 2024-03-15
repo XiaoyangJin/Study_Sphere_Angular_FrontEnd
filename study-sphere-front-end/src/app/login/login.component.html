@@ -1,30 +1,67 @@
-<div class="center-container">
-    <div id="login-container">
-        <div id="login-form" [formGroup]="form">
-            <div class="input">
-                <input type="text" id="username" formControlName="username" placeholder="Please enter your email"
-                    class="input-field">
-                <!-- keep no show -->
-                <!-- <div id="username-error"
-                *ngIf="form.get('username')?.hasError('email') && (form.get('username')?.touched || isFormSubmitted)">
-                Please enter a valid email address.
-            </div> -->
+<!DOCTYPE html>
+<html lang="en">
 
-                <!-- <div id="password-container">
-                <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
-                    class="input-field" maxlength="50" />
-                <span #passwordToggle (click)="togglePasswordVisibility()">
-                    {{ isPasswordVisible ? 'Hide Password' : 'Show Password' }}
-                </span>
-            </div> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
 
-                <input type="password" id="password" formControlName="password" placeholder="Please enter your password"
-                    class="input-field">
-            </div>
-
-            <button id="login-button" (click)="login()">Login</button>
-            <button id="signup-button" (click)="navigateToSignup()">Sign Up</button>
-            <a id="forgot-password" href="#">Forgot Password</a>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <img src="assets/Study_Sphere_Logo.png"
+                alt="A circle with a black background and yello words 'study sphere'" />
+            <h1 class="header__title">Welcome to Study Sphere</h1>
         </div>
-    </div>
-</div>
+        <nav class="header__menu">
+            <ul class="header__menu__list">
+                <li class="header__menu__item"><a href="/login">Log in</a></li>
+                <li class="header__menu__item"><a href="/">Community</a></li>
+                <li class="header__menu__item"><a href="/">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="main__content">
+            <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <label class="login__label">
+                    <span class="login__name-label">Name(Email): </span>
+
+                </label>
+                <input class="login__name-input" name="name" />
+                <span class="login__error login__error--name"></span>
+
+
+                <label class="login__label">
+                    <span class="login__password-label">PassWord: </span>
+
+
+                </label>
+                <input class="login__password-input" name="password" type="text" />
+                <span class="login__error login__error--password"></span>
+
+                <button class="login__submit" type="submit">Log In</button>
+            </form>
+            <div class="reset__link">
+                Forget Password? <a href="/signup">Reset Password</a>
+            </div>
+            <div class="signup__link">
+                Don't have an account? <a href="/signup">Sign Up</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <nav class="footer__menu">
+            <ul class="footer__menu__list">
+                <li class="footer__menu__item"><a href="https://www.linkedin.com/in/xiaoyangjin4/">contact us</a></li>
+                <li class="footer__menu__item"><a href="/">follow us</a></li>
+                <li class="footer__menu__item"><a href="/">privacy policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
