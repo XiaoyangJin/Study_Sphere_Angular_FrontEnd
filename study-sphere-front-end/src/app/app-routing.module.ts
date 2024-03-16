@@ -9,8 +9,6 @@ import { CreatePostComponent } from './components/createPost/create-post.compone
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  // { path: '', loadChildren: () => import('./components/public/public.module').then((m) => m.PublicModule), },
-  // { path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule), canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'playground', component: PlaygroundComponent, canActivate: [AuthGuardService] },

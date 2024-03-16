@@ -16,6 +16,10 @@ import { ProfileButtonComponent } from './shared/profile-button/profile-button.c
 import { HttpClientModule } from '@angular/common/http';
 import { SignupModule } from './components/signup/signup.module';
 
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +39,9 @@ import { SignupModule } from './components/signup/signup.module';
     FormsModule,
     HttpClientModule,
     SignupModule,
+    CardModule,
+    InputTextModule,
+    ButtonModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

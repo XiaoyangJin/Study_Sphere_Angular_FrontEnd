@@ -25,6 +25,22 @@
     </header>
     <main class="main">
         <div class="main__content">
+            <form class="pcard__login" [formGroup]="ploginForm">
+                <p-card header="Login">
+                    <div class="field">
+                        <label class="login__label" for="email">Name(Email): </label>
+                        <input type="text" pInputText formControlName="email" class="w-full" name="email"
+                            placeholder="Type your email" />
+                    </div>
+                    <div class="field">
+                        <label class="login__label" for="password">Password: </label>
+                        <input type="password" pInputText formControlName="password" class="w-full" name="password"
+                            placeholder="Type your password" />
+                    </div>
+                    <p-button label="Log In" styleClass="w-full"></p-button>
+                    <div class="reset__link">Not a member? <a routerLink="/signup">Sign Up</a></div>
+                </p-card>
+            </form>
             <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <label class="login__label">

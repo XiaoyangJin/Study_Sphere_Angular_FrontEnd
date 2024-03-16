@@ -11,6 +11,10 @@ input {
     padding: 2rem;
 }
 
+.pcard__login {
+    width: 360px;
+}
+
 .login {
     display: flex;
 
@@ -60,6 +64,12 @@ input {
     cursor: pointer;
 }
 
+.signup-link,
+.reset-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 @media (min-width: 40rem) {
 
@@ -97,10 +107,4 @@ input {
         grid-column: 2 / span 1;
         color: red;
     }
-}
-
-.signup-link,
-.reset-link {
-    text-align: center;
-    margin-top: 20px;
 }
