@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile-button',
   templateUrl: './profile-button.component.html',
-  styleUrls: ['./profile-button.component.css']
+  styleUrls: ['./profile-button.component.scss']
 })
 export class ProfileButtonComponent {
   constructor(private router: Router) { }

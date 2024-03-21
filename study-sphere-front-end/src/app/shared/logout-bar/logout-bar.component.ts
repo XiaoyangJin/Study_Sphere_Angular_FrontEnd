@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-logout-bar',
   templateUrl: './logout-bar.component.html',
-  styleUrls: ['./logout-bar.component.css']
+  styleUrls: ['./logout-bar.component.scss']
 })
 export class LogoutBarComponent {
 

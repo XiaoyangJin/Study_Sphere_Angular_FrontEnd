@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-button',
   templateUrl: './create-button.component.html',
-  styleUrls: ['./create-button.component.css']
+  styleUrls: ['./create-button.component.scss']
 })
 export class CreateButtonComponent {
 
