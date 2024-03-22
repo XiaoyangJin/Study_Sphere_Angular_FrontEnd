@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { passwordMatchValidators } from 'src/app/shared/password-match.directive';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -20,6 +21,8 @@ export class SignupComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required]
+  }, {
+    validators: passwordMatchValidators
   })
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
