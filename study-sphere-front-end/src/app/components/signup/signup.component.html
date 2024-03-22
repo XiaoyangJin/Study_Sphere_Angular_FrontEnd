@@ -55,6 +55,11 @@
                             class="register__error register__error--password">
                             <div *ngIf="confirmPassword.errors?.['required']">Please confirm the password</div>
                         </small>
+                        <small
+                            *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"
+                            class="register__error register__error--password">
+                            Password should match
+                        </small>
                     </div>
                     <p-button label="Register" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
                     <div class="reset__link">Already a member? <a routerLink="/login">Login</a></div>
