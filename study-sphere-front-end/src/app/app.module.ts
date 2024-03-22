@@ -14,7 +14,7 @@ import { CreatePostComponent } from './components/createPost/create-post.compone
 import { CreateButtonComponent } from './shared/create-button/create-button.component';
 import { ProfileButtonComponent } from './shared/profile-button/profile-button.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SignupModule } from './components/signup/signup.module';
+import { SignupComponent } from './components/signup/signup.component';
 
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
@@ -24,6 +24,7 @@ import { ButtonModule } from 'primeng/button';
   declarations: [
     AppComponent,
     AdminComponent,
+    SignupComponent,
     LoginComponent,
     PlaygroundComponent,
     LogoutBarComponent,
@@ -38,7 +39,6 @@ import { ButtonModule } from 'primeng/button';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SignupModule,
     CardModule,
     InputTextModule,
     ButtonModule

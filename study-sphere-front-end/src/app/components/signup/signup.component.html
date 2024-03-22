@@ -25,48 +25,42 @@
     </header>
     <main class="main">
         <div class="main__content">
-            <form class="register" [formGroup]="signupForm" (ngSubmit)="signup()">
-                <div class="required__message">
-                    <p class="is__required">Fields marked with an asterisk (*) are required.</p>
-                </div>
-                <label class="register__label">
-                    <span class="username">Name(Email)</span>
-                    <span class="is__required">*</span>:
 
-                </label>
-                <input class="register__name-input" name="name" />
-                <span class="register__error register__error--name"></span>
-
-
-                <label class="register__label">
-                    <span class="register__password-label">PassWord</span>
-                    <span class="is__required">*</span>:
-
-
-                </label>
-                <input class="register__password-input" name="password" type="text" />
-                <span class="register__error register__error--password"></span>
-
-
-                <label class="register__label">
-                    <span class="register__confirm-label">Confirm PassWord</span>
-                    <span class="is__required">*</span>:
-
-                </label>
-                <input class="register__confirm-input" name="confirm" type="text" />
-                <span class="register__error register__error--confirm"></span>
-
-
-                <label class="checkbox" for="wants-spam">
-                    <input type="checkbox" id="wants-spam" name="wants-spam" checked>
-                    Do you want us to send you annoying emails?
-                </label>
-
-                <button class="register__submit" type="submit" (click)="signup()">Register</button>
+            <form class="pcard__register" [formGroup]="registerForm">
+                <p-card header="Register" [style]="{width: '360px'}">
+                    <div class="field">
+                        <label class="register__label" for="email">Name(Email): </label>
+                        <input type="text" pInputText formControlName="email" class="w-full" name="email"
+                            placeholder="Type your email" />
+                        <small *ngIf="email.invalid && (email.dirty || email.touched)"
+                            class="register__error register__error--email">
+                            <div *ngIf="email.errors?.['required']">Email is required</div>
+                            <div *ngIf="email.errors?.['email']">Email should be valid</div>
+                        </small>
+                    </div>
+                    <div class="field">
+                        <label class="register__label" for="password">Password: </label>
+                        <input type="password" pInputText formControlName="password" class="w-full" name="password"
+                            placeholder="Type your password" />
+                        <small *ngIf="password.invalid && (password.dirty || password.touched)"
+                            class="register__error register__error--password">
+                            <div *ngIf="password.errors?.['required']">Password is required</div>
+                        </small>
+                    </div>
+                    <div class="field">
+                        <label class="register__label" for="confirmPassword">Confirm Password: </label>
+                        <input type="password" pInputText formControlName="confirmPassword" class="w-full"
+                            name="password" placeholder="Type your password again" />
+                        <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+                            class="register__error register__error--password">
+                            <div *ngIf="confirmPassword.errors?.['required']">Please confirm the password</div>
+                        </small>
+                    </div>
+                    <p-button label="Register" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
+                    <div class="reset__link">Already a member? <a routerLink="/login">Login</a></div>
+                </p-card>
             </form>
-            <div class="login__link">
-                Already have an account? <a href="/login">Log in</a>
-            </div>
+
         </div>
     </main>
     <footer class="footer">

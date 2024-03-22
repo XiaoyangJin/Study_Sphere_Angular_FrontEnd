@@ -16,6 +16,12 @@ export class SignupComponent {
     password: ''
   };
 
+  registerForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    confirmPassword: ['', Validators.required]
+  })
+
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.createForm();
   }
@@ -60,6 +66,18 @@ export class SignupComponent {
       // Handle the case where either or both fields are invalid
       // You can show an error message or perform other actions
     }
+  }
+
+  get email() {
+    return this.registerForm.controls['email'];
+  }
+
+  get password() {
+    return this.registerForm.controls['password'];
+  }
+
+  get confirmPassword() {
+    return this.registerForm.controls['confirmPassword'];
   }
 
 }

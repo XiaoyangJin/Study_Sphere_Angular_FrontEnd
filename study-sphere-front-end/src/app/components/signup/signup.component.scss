@@ -1,132 +1,16 @@
-input {
-    font: inherit;
-}
-
-
 .main {
-    grid-area: main;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: 2rem;
+    height: 100%;
+
+    margin: 2rem;
 }
 
-
-
-.required__message {
-    margin-bottom: 1rem;
-}
-
-.is__required {
-    color: red;
-    font-size: small;
-}
-
-.register {
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-
-    padding: 1rem;
-    border: 1px solid #12372A;
-    border-radius: 15px;
-}
-
-.register__label,
-.register__name-input,
-.register__password-input,
-.register__confirm-input,
-.register__error {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.register__label {
-    margin-bottom: 8px;
-}
-
-.register__name-input,
-.register__password-input,
-.register__confirm-input,
-.dropdown__menu {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+.reset__link {
+    margin-top: 1rem;
 }
 
 .register__error {
     color: red;
-    margin-bottom: 1rem;
-}
-
-.checkbox {
-    margin-bottom: 1rem;
-}
-
-.register__submit {
-    margin: 0 auto;
-
-    height: 2.5rem;
-    width: 5rem;
-
-    font-family: "Monaco", sans-serif;
-}
-
-.register__label,
-.checkbox,
-.register__submit,
-.dropdown__menu {
-    cursor: pointer;
-}
-
-
-@media (min-width: 40rem) {
-
-    .register {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .register__label,
-    .register__input,
-    .dropdown__menu {
-        grid-column: span 1;
-    }
-
-    .register__label {
-        text-align: left;
-        padding-right: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        margin-bottom: 1rem;
-    }
-
-    .required__message,
-    .checkbox,
-    .register__submit {
-        grid-column: 1 / -1;
-    }
-
-    .register__error {
-        grid-column: 2 / span 1;
-        color: red;
-    }
-
-    .register__submit {
-        justify-self: center;
-        width: auto;
-        margin: 1rem 0;
-    }
-
-}
-
-.login-link {
-    text-align: center;
-    margin-top: 20px;
 }
