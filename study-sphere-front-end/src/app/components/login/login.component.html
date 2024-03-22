@@ -18,7 +18,7 @@
         <nav class="header__menu">
             <ul class="header__menu__list">
                 <li class="header__menu__item"><a href="/login">Log in</a></li>
-                <li class="header__menu__item"><a href="/">Community</a></li>
+                <li class="header__menu__item"><a href="/">Playground</a></li>
                 <li class="header__menu__item"><a href="/">About us</a></li>
             </ul>
         </nav>
@@ -26,47 +26,31 @@
     <main class="main">
         <div class="main__content">
             <form class="pcard__login" [formGroup]="ploginForm">
-                <p-card header="Login">
+                <p-card header="Login" [style]="{width: '360px'}">
                     <div class="field">
                         <label class="login__label" for="email">Name(Email): </label>
                         <input type="text" pInputText formControlName="email" class="w-full" name="email"
                             placeholder="Type your email" />
+                        <small *ngIf="pemail.invalid && (pemail.dirty || pemail.touched)"
+                            class="login__error login__error--email">
+                            <div *ngIf="pemail.errors?.['required']">Email is required</div>
+                            <div *ngIf="pemail.errors?.['email']">Email should be valid</div>
+                        </small>
                     </div>
                     <div class="field">
                         <label class="login__label" for="password">Password: </label>
                         <input type="password" pInputText formControlName="password" class="w-full" name="password"
                             placeholder="Type your password" />
+                        <small *ngIf="ppassword.invalid && (ppassword.dirty || ppassword.touched)"
+                            class="login__error login__error--password">
+                            <div *ngIf="ppassword.errors?.['required']">Password is required</div>
+                        </small>
                     </div>
                     <p-button label="Log In" styleClass="w-full"></p-button>
                     <div class="reset__link">Not a member? <a routerLink="/signup">Sign Up</a></div>
+                    <div class="reset__link">Forget Password? <a routerLink="/signup">Reset Password</a></div>
                 </p-card>
             </form>
-            <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
-
-                <label class="login__label">
-                    <span class="login__name-label">Name(Email): </span>
-
-                </label>
-                <input class="login__name-input" name="name" />
-                <span class="login__error login__error--name"></span>
-
-
-                <label class="login__label">
-                    <span class="login__password-label">PassWord: </span>
-
-
-                </label>
-                <input class="login__password-input" name="password" type="text" />
-                <span class="login__error login__error--password"></span>
-
-                <button class="login__submit" type="submit" (click)="login()">Log In</button>
-            </form>
-            <div class="reset__link">
-                Forget Password? <a href="/signup">Reset Password</a>
-            </div>
-            <div class="signup__link">
-                Don't have an account? <a href="/signup">Sign Up</a>
-            </div>
         </div>
     </main>
     <footer class="footer">

@@ -25,12 +25,11 @@ body {
         "header"
         "main"
         "footer";
+
+    height: 100%;
+    margin: 0;
 }
 
-body {
-    min-height: 100vh;
-    display: grid;
-}
 
 input {
     font: inherit;

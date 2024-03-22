@@ -1,110 +1,16 @@
-input {
-    font: inherit;
-}
-
 .main {
-    grid-area: main;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: 2rem;
+    height: 100%;
+
+    margin: 2rem;
 }
 
-.pcard__login {
-    width: 360px;
-}
-
-.login {
-    display: flex;
-
-    flex-direction: column;
-    align-items: center;
-
-    padding: 1rem;
-    border: 1px solid #12372A;
-    border-radius: 15px;
-}
-
-.login__label,
-.login__name-input,
-.login__password-input,
-.login__error {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.login__label {
-    margin-bottom: 8px;
-}
-
-.login__name-input,
-.login__password-input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+.reset__link {
+    margin-top: 1rem;
 }
 
 .login__error {
     color: red;
-    margin-bottom: 1rem;
-}
-
-.login__submit {
-    margin: 0 auto;
-
-    height: 2.5rem;
-    width: 5rem;
-
-    font-family: "Monaco", sans-serif;
-}
-
-.login__label,
-.login__submit {
-    cursor: pointer;
-}
-
-.signup-link,
-.reset-link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-
-@media (min-width: 40rem) {
-
-    .login {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login__label,
-    .login__input {
-        grid-column: span 1;
-    }
-
-    .login__label {
-        text-align: left;
-        padding-right: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        margin-bottom: 1rem;
-    }
-
-    .login__submit {
-        grid-column: 1 / -1;
-
-        justify-self: center;
-        width: auto;
-        margin: 1rem 0;
-    }
-
-    .login__error {
-        grid-column: 2 / span 1;
-        color: red;
-    }
 }
